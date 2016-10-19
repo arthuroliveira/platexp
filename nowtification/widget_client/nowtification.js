@@ -1,21 +1,16 @@
-function (nowtificationFactory, $rootScope, $scope, $timeout, spUtil) {
+function (nowtification, $rootScope, $scope, $timeout, spUtil) {
     /* widget controller */
     var c = this;
 
-    // $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
-    //     if (fromState.name != toState.name)
-    //         c.notifications = nowtificationFactory.getNotifications();
-    // });
-
     $rootScope.$on('showNotification', function () {
-        c.notifications = nowtificationFactory.getNotifications();
+        c.notifications = nowtification.getNotifications();
     });
     var timeoutPromise;
 
     c.notifications = [];
 
     function init() {
-        nowtificationFactory.getNotifications().forEach(function (item) {
+        nowtification.getNotifications().forEach(function (item) {
             c.notifications.push(item);
             if (timeoutPromise)
                 $timeout.cancel(timeoutPromise);
@@ -25,9 +20,7 @@ function (nowtificationFactory, $rootScope, $scope, $timeout, spUtil) {
         });
     }
 
-    nowtificationFactory.setOnShowNotification(init);
-
-
+    // nowtification.setOnShowNotification(init);
     init();
 
     c.collapse = function (notification_index) {
@@ -35,6 +28,6 @@ function (nowtificationFactory, $rootScope, $scope, $timeout, spUtil) {
     };
 
     if (c.options.table) {
-        spUtil.recordWatch($scope, c.options.table, "");
+        spUtil.recordWatch($scope, c.options.table, c.options.tableFilter || "");
     }
 }
