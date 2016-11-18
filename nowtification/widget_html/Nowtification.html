@@ -1,0 +1,55 @@
+<svg viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="alert-success" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="13.3-Notification" transform="translate(-14.000000, -15.000000)" stroke="#00A973" stroke-width="2"
+           fill="#00A973">
+            <g id="bubble-tick-o" transform="translate(15.000000, 16.000000)">
+                <path d="M30,0 C13.5,0 0,13.5 0,30 C0,46.5 13.5,60 30,60 C46.5,60 60,46.5 60,30 C60,13.5 46.5,0 30,0 L30,0 Z M30,57.9375 C14.625,57.9375 2.0625,45.375 2.0625,30 C2.0625,14.625 14.625,2.0625 30,2.0625 C45.375,2.0625 57.9375,14.625 57.9375,30 C57.9375,45.375 45.375,57.9375 30,57.9375 L30,57.9375 Z"
+                      id="Shape"></path>
+                <polygon id="Shape"
+                         points="27.9435484 37.3978495 16.5395894 25.2831541 13.5483871 27.8924731 28.1304985 43.5483871 46.4516129 20.8100358 43.4604106 18.3870968"></polygon>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="alert-error" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="13.6-Notification" transform="translate(-14.000000, -15.000000)" fill="#ED5460">
+            <g id="bubble-tick-o" transform="translate(15.000000, 16.000000)">
+                <path d="M30,0 C13.5,0 0,13.5 0,30 C0,46.5 13.5,60 30,60 C46.5,60 60,46.5 60,30 C60,13.5 46.5,0 30,0 L30,0 Z M30,57.9375 C14.625,57.9375 2.0625,45.375 2.0625,30 C2.0625,14.625 14.625,2.0625 30,2.0625 C45.375,2.0625 57.9375,14.625 57.9375,30 C57.9375,45.375 45.375,57.9375 30,57.9375 L30,57.9375 Z"
+                      id="Shape" stroke="#ED5460" stroke-width="2"></path>
+                <polygon id="Shape"
+                         points="46 16.3 43.7 14 30 27.7 16.3 14 14 16.3 27.7 30 14 43.7 16.3 46 30 32.3 43.7 46 46 43.7 32.3 30"></polygon>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="notification-arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="13.2-Notification" transform="translate(-292.000000, -26.000000)" fill="#999999">
+            <g id="arrow-circle-right-copy-2" transform="translate(292.000000, 26.000000)">
+                <path d="M2.15699905,0.338842975 C1.70289398,-0.112947658 1.02173639,-0.112947658 0.340578797,0.338842975 C-0.113526266,0.790633609 -0.113526266,1.46831956 0.340578797,2.14600551 L17.5965712,19.3140496 L17.8236237,21.5730028 L0.567631328,38.7410468 C0.113526266,39.1928375 0.113526266,39.8705234 0.567631328,40.5482094 C0.794683859,40.7741047 1.02173639,41 1.47584145,41 C1.70289398,41 2.15699905,40.7741047 2.38405158,40.5482094 L21.6835167,21.3471074 C22.1376218,20.8953168 22.1376218,19.9917355 21.4564642,19.5399449 L2.15699905,0.338842975 Z"
+                      id="Shape"></path>
+            </g>
+        </g>
+    </symbol>
+</svg>
+<div>
+    <div id="sn-alerts">
+        <div ng-click="c.collapse($index)" ng-repeat="notification in c.notifications track by $index" role="alert"
+             class=" slideUp item alert contrast-text-color alert-{{ notification.type }}">
+            <div class="icon pull-left">
+                <svg ng-if="notification.type=='success'">
+                    <use xlink:href='#alert-success'></use>
+                </svg>
+                <svg ng-if="notification.type=='danger'">
+                    <use xlink:href='#alert-error'></use>
+                </svg>
+            </div>
+            <!--<h3 ng-bind-html="notification.title"></h3>-->
+            <p class="pull-left" ng-bind-html="notification.text"></p>
+            <div class="pull-right arrow">
+                <svg>
+                    <use xlink:href='#notification-arrow'></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
