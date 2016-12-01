@@ -1,11 +1,15 @@
 function () {
     return {
-        template: '<h1>Maps</h1>',
+        template: '<div class="map">MAP</div>',
         restrict: 'E',
         replace: true,
         scope: {
+            key: "@"
         },
-        controller: function () {
+        controller: function ($scope) {
+        },
+        link: function link(scope, element, attrs, controller) {
+
         }
     };
 }
