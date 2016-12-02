@@ -1,1 +1,1 @@
-// populate the 'data' object// e.g., data.table = $sp.getValue('table');
+// populate the 'data' object// e.g., data.table = $sp.getValue('table');(function () {    data.key = options.api_key || gs.getProperty('google.maps.key');})();
