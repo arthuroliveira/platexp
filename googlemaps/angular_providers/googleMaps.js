@@ -22,7 +22,6 @@ function () {
                     center: $scope.center || {lat: 37.09024, lng: -95.712891},
                     zoom: $scope.zoom || 3
                 });
-
                 if ($scope.locations) {
                     $scope.locations.forEach(function (item) {
                         item.map = map;
