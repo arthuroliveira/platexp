@@ -1,4 +1,3 @@
 function () {
     var c = this;
-    
 }
