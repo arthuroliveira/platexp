@@ -5,6 +5,7 @@ module.exports = function (grunt) {
         watch: {
             dist: {
                 files: [
+                    'ui_scripts/**/*',
                     'widget_client/**/*',
                     'widget_css/**/*',
                     'widget_html/**/*',
