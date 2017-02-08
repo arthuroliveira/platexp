@@ -1,0 +1,24 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "[{\"hint\":\"Table to pull notifications from. Leave empty if you only want to use the client facing notificaton.\",\"name\":\"table\",\"label\":\"Table\",\"type\":\"string\"},{\"hint\":\"Query to filter the table. variable available: $myuserid and $mygroups.\",\"name\":\"query\",\"label\":\"Query\",\"type\":\"string\"},{\"hint\":\"Field from the table to expose to the template. Please separate them by comma\",\"name\":\"fields\",\"label\":\"Fields\",\"type\":\"string\"}]",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/dev-practice/ge--iot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/dev-practice/ge--iot/issues"
+  },
+  "homepage": "https://gitlab.com/dev-practice/ge--iot#README",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-servicenow": "^0.4.1"
+  }
+}
