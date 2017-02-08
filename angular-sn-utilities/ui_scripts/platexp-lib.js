@@ -69,6 +69,17 @@
             };
         })
         .directive('compile', function ($compile) {
+            /**
+             * angular directive; compiles HTML strings into the DOM
+             *
+             *
+             * Example:
+             *
+             * ```
+             * <div compile="ctrl.stringContent"></div>```
+             *
+             * @namespace compile
+             */
             return function (scope, element, attrs) {
                 scope.$watch(
                     function (scope) {
