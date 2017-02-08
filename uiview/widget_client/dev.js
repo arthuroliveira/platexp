@@ -12,10 +12,20 @@ function ($location) {
     }
 
     c.test = function () {
+        var stateObj = { foo: "bar" };
+        history.pushState(stateObj, "page 2", "?t=3");
+
+        // var myURL = document.location;
+        // document.location = myURL + "?a=parameter";
+
+
+        // $location.uiurl({test: makeid()});
+
+        // $location.path({test: makeid()});
         // $location.search({test: makeid()});
         // var stateObj = {foo: "bar"};
         // history.pushState(stateObj);
-        history.pushState({}, null, '?test='+makeid());
+        // history.pushState({}, null, '?test='+makeid());
 
     };
 
